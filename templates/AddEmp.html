@@ -6,30 +6,28 @@
 <center>
 	<font color="black" size="4" style="font-family: avenir">
 
-		<h1 style="color: DodgerBlue">Employee Database</h1>
+		<h1 style="color: Orange;font-size:40pt;"><b>Clairvoyant</b></h1>
+		<h1 style="color: black;font-size:20pt;">Corporate Directory</h1>
 
 		<body bgcolor="white">
 
 			<form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
 
-				<button type="submit" formaction="/getemp" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GET EMPLOYEE INFORMATION</button><br><br>
+				<b>Employee ID:</b><br> <input style="height:25px;font-size:14pt; color:grey;" type="number" name="emp_id" autofocus size="40"><br><br>
 
-		  		Employee ID:<br> <input style="height:25px;font-size:14pt; color:grey;" type="number" name="emp_id" autofocus size="40"><br><br>
+		  		<b>First Name:</b><br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="first_name" ><br><br>
 
-		  		First Name:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="first_name" ><br><br>
+		  		<b>Last Name:</b><br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="last_name"><br><br>
 
-		  		Last Name:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="last_name"><br><br>
+		  		<b>Primary Skills:</b><br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="pri_skill"><br><br>
 
-		  		Primary Skills:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="pri_skill"><br><br>
+		  		<b>Location:</b><br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="location"><br><br>
 
-		  		Location:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="location"><br><br>
-
-		  		Image: <input type=file name="emp_image_file" style="height:25px;font-size:14pt;color:grey;"> <br><br>
+		  		<b>Image: </b><input type=file name="emp_image_file" style="height:25px;font-size:14pt;color:grey;"> <br><br>
 
 		  		<button type="submit" style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">UPDATE DATABASE</button>
 
 			</form>
-<a href="/about">About Us</a>
 		</body>
 
 	</font>
