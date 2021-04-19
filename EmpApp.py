@@ -25,7 +25,7 @@ table = 'employee'
 def home():
     return render_template('SignIn.html')
 
- @app.route("/check", methods=['GET', 'POST'])
+@app.route("/check", methods=['GET', 'POST'])
 def check():
 	cursor=db_conn.cursor()
     em=request.form['email']
