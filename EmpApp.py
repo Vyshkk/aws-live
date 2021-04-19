@@ -39,7 +39,7 @@ def check():
 def hr():
     if request.form.get("ins_emp_info"):
         return render_template('AddEmp.html')
-    else request.form.get("get_emp_info"):
+    elif request.form.get("get_emp_info"):
         return render_template('GetEmp.html')
 
 
