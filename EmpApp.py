@@ -30,7 +30,7 @@ def check():
     cursor=db_conn.cursor()
     em=request.form['email']
     pas=request.form['password']
-    cursor.execute("SELECT *  FROM emp_login where email=em and password=pas")
+    cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
     details = cursor.fetchall()
     return render_template('AddEmp.html')
 
