@@ -32,13 +32,17 @@ def check():
     pas=request.form['password']
     cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
     details = cursor.fetchall()
-    return render_template('AddEmp.html')
+    return render_template('Hme_Pge.html')
 
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/hr", methods=['GET', 'POST'])
 def hr():
-    return render_template('AddEmp.html')
-
+    if request.form.get("ins_emp_info"):
+    	return render_template('AddEmp.html')
+    elif request.form.get("get_emp_info")
+        return render_template('GetEmp.html')
+    else
+        return render_template('GetEmp.html')
 
 @app.route("/about", methods=['POST'])
 def about():
