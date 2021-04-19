@@ -41,6 +41,8 @@ def hr():
         return render_template('AddEmp.html')
     elif request.form.get("get_emp_info"):
         return render_template('GetEmp.html')
+    else:
+    	return "Please Click a Button"
 
 
 @app.route("/about", methods=['POST'])
