@@ -19,19 +19,30 @@ db_conn = connections.Connection(
 )
 output = {}
 table = 'employee'
-
-@app.route("/", methods=['GET', 'POST'])
-def home1():
-    return render_template('SignIn.html')
+    
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
+    return render_template('SignIn.html')
+
+ @app.route("/check", methods=['GET', 'POST'])
+def check():
+	cursor=db_conn.cursor()
+    em=request.form['email']
+    pas=request.form['password']
+    cursor.execute("SELECT *  FROM emp_login where email=em and password=pas")
+    details = cursor.fetchall()
+    return render_template('AddEmp.html')
+
+
+@app.route("/", methods=['GET', 'POST'])
+def hr():
     return render_template('AddEmp.html')
 
 
 @app.route("/about", methods=['POST'])
 def about():
-    return render_template('www.intellipaat.com')
+    return render_template('https://github.com/Vyshkk')
 
 
 @app.route("/addemp", methods=['POST'])
