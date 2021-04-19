@@ -35,14 +35,13 @@ def check():
     return render_template('Hme_Pge.html')
 
 
-@app.route("/hr", methods=['GET', 'POST'])
-def hr():
-    if request.form['get_emp_info']:
-        a='GetEmp.html'
-    elif request.form['ins_emp_info']:
-        a='AddEmp.html'
-    return render_template(a)
+@app.route("/get_emp_info", methods=['GET', 'POST'])
+def get_emp_info():
+    return render_template("GetEmp.html")
 
+@app.route("/ins_emp_info", methods=['GET', 'POST'])
+def ins_emp_info():
+    return render_template("AddEmp.html")
 
 @app.route("/about", methods=['POST'])
 def about():
