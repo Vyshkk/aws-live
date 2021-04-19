@@ -37,9 +37,9 @@ def check():
 
 @app.route("/hr", methods=['GET', 'POST'])
 def hr():
-    if request.form.get("get_emp_info"):
+    if request.form['get_emp_info']:
         a='GetEmp.html'
-    elif request.form.get("ins_emp_info"):
+    elif request.form['ins_emp_info']:
         a='AddEmp.html'
     return render_template(a)
 
