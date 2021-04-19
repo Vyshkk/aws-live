@@ -38,10 +38,10 @@ def check():
 @app.route("/hr", methods=['GET', 'POST'])
 def hr():
     if request.form.get("ins_emp_info"):
-    	return render_template('AddEmp.html')
-    elif request.form.get("get_emp_info")
+        return render_template('AddEmp.html')
+    elif request.form.get("get_emp_info"):
         return render_template('GetEmp.html')
-    else
+    else:
         return render_template('GetEmp.html')
 
 @app.route("/about", methods=['POST'])
