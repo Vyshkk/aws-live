@@ -99,7 +99,7 @@ def AddEmp():
 
 
 @app.route("/fetchdata", methods=['POST'])
-def fetch()
+def fetch():
 	emp_id=request.form['emp_id']
 	get_sql=("SELECT * from employee where emp_id=%s")
 	cursor = db_conn.cursor()
