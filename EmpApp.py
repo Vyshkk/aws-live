@@ -32,7 +32,7 @@ def check():
     pas=request.form['password']
     cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
     details = cursor.fetchall()
-    print(details)
+    print("abc")
     return render_template('Hme_Pge.html')
 
 
