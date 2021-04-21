@@ -32,6 +32,7 @@ def check():
     pas=request.form['password']
     cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
     details = cursor.fetchall()
+    print(details)
     return render_template('Hme_Pge.html')
 
 
@@ -107,8 +108,7 @@ def fetch():
     details=cursor.fetchall()
     for detail in details:
         var = detail
-    print(details)
-    return render_template('GetEmpOutput.html',var=var)
+    return render_template('GetEmpOutput.html',emp_id=cursor.fetchall())
 
 
 
