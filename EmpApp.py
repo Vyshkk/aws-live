@@ -98,5 +98,19 @@ def AddEmp():
     return render_template('AddEmpOutput.html', name=emp_name)
 
 
+@app.route("/fetchdata", methods=['POST'])
+def fetch()
+	emp_id=request.form['emp_id']
+	get_sql=("SELECT * from employee where emp_id=%s")
+	cursor = db_conn.cursor()
+	cursor.execute(get_sql, (emp_id))
+    details=cursor.fetchall()
+    for detail in details:
+        var = detail
+    return render_template('GetEmpOutput.html',var=var)
+
+
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80, debug=True)
