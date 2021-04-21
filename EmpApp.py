@@ -107,7 +107,7 @@ def fetch():
     details=cursor.fetchall()
     for detail in details:
         var = detail
-    print(var)
+    print(details)
     return render_template('GetEmpOutput.html',var=var)
 
 
