@@ -100,10 +100,10 @@ def AddEmp():
 
 @app.route("/fetchdata", methods=['POST'])
 def fetch():
-	emp_id=request.form['emp_id']
-	get_sql=("SELECT * from employee where emp_id=%s")
-	cursor = db_conn.cursor()
-	cursor.execute(get_sql, (emp_id))
+    emp_id=request.form['emp_id']
+    get_sql=("SELECT * from employee where emp_id=%s")
+    cursor = db_conn.cursor()
+    cursor.execute(get_sql, (emp_id))
     details=cursor.fetchall()
     for detail in details:
         var = detail
