@@ -37,7 +37,7 @@ def check():
     print ('<table border="0"><tr><th>order</th><th>name</th><th>type</th><th>description</th></tr>')
     print ('<tbody>')
     counter = 0
-    for field in fields:
+    for field in details:
         counter = counter + 1
         name = field[0]
         pas = field[1]
