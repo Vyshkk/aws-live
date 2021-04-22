@@ -30,10 +30,22 @@ def check():
     cursor=db_conn.cursor()
     em=request.form['email']
     pas=request.form['password']
-    cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
+    d=cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
     details = cursor.fetchall()
-    print("abc")
-    return render_template('Hme_Pge.html')
+   # print("abc")
+    
+    print '<table border="0"><tr><th>order</th><th>name</th><th>type</th><th>description</th></tr>'
+    print '<tbody>'
+    counter = 0
+    for field in fields:
+        counter = counter + 1
+        name = field[0]
+        pas = field[1]
+        print '<tr><td>' + str(counter) + '</td><td>' + name + '</td><td>' + pas + '</td><td></td></tr>'
+    print '</tbody>'
+    print '</table>'
+    return
+    #return render_template('Hme_Pge.html')
 
 
 @app.route("/get_emp_info", methods=['GET', 'POST'])
