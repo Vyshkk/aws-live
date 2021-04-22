@@ -118,11 +118,16 @@ def fetch():
     cursor = db_conn.cursor()
     cursor.execute(get_sql, (emp_id))
     details=cursor.fetchall()
-    print(details[0])
-    print(details[1])
+    print(details[0][0])
+    print(details[0][1])
+    emp_id=details[0][0]
+    f_name=details[0][1]
+    l_name=details[0][2]
+    pri_skill=details[0][3]
+    location=details[0][4]
     #for detail in details:
     #    var = detail
-    return render_template('GetEmpOutput.html',emp_id=cursor.fetchall())
+    return render_template('GetEmpOutput.html',emp_id=emp_id)
 
 
 
