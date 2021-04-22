@@ -34,16 +34,16 @@ def check():
     details = cursor.fetchall()
    # print("abc")
     
-    print '<table border="0"><tr><th>order</th><th>name</th><th>type</th><th>description</th></tr>'
-    print '<tbody>'
+    print ('<table border="0"><tr><th>order</th><th>name</th><th>type</th><th>description</th></tr>')
+    print ('<tbody>')
     counter = 0
     for field in fields:
         counter = counter + 1
         name = field[0]
         pas = field[1]
-        print '<tr><td>' + str(counter) + '</td><td>' + name + '</td><td>' + pas + '</td><td></td></tr>'
-    print '</tbody>'
-    print '</table>'
+        print('<tr><td>' + str(counter) + '</td><td>' + name + '</td><td>' + pas + '</td><td></td></tr>')
+    print ('</tbody>')
+    print ('</table>')
     return
     #return render_template('Hme_Pge.html')
 
