@@ -44,7 +44,7 @@ def check():
         print('<tr><td>' + str(counter) + '</td><td>' + name + '</td><td>' + pas + '</td><td></td></tr>')
     print ('</tbody>')
     print ('</table>')
-    return
+    
     #return render_template('Hme_Pge.html')
 
 
