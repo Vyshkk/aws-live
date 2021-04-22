@@ -32,20 +32,11 @@ def check():
     pas=request.form['password']
     d=cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
     details = cursor.fetchall()
-   # print("abc")
+    if details[0]=='hr@gmail.com':
+        return render_template('Hme_Pge.html')
+    else
+    	return render_template('AddEmp.html')
     
-    #print ('<table border="0"><tr><th>order</th><th>name</th><th>type</th><th>description</th></tr>')
-    #print ('<tbody>')
-    #counter = 0
-    #for field in details:
-    #    counter = counter + 1
-    #    name = field[0]
-    #    pas = field[1]
-    #    print('<tr><td>' + str(counter) + '</td><td>' + name + '</td><td>' + pas + '</td><td></td></tr>')
-    #print ('</tbody>')
-    #print ('</table>')
-    
-    return render_template('Hme_Pge.html')
 
 
 @app.route("/get_emp_info", methods=['GET', 'POST'])
@@ -127,7 +118,7 @@ def fetch():
     location=details[0][4]
     #for detail in details:
     #    var = detail
-    return render_template('GetEmpOutput.html',emp_id=emp_id)
+    return render_template('GetEmpOutput.html',emp_id=emp_id,f_name=f_name,l_name=l_name,pri_skill=pri_skill,location=location)
 
 
 
