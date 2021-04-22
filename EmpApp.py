@@ -42,7 +42,10 @@ def check():
     	f_name=d[0][1]
     	l_name=d[0][2]
     	location=d[0][3]
-    	return render_template('User.html',f_name=f_name,l_name=l_name,location=location)
+    	salary=d[0][5]
+    	Med_plan=d[0][6]
+    	Vac_hours_left=d[0][7]
+    	return render_template('User.html',f_name=f_name,l_name=l_name,location=location,salary=salary,Med_plan=Med_plan,Vac_hours_left=Vac_hours_left)
     
 
 
