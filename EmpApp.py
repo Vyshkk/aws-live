@@ -37,11 +37,11 @@ def check():
     elif details[0][0]=='':
     	return 'Please check your User name or Password'
     else:
-    	cursor.execute("SELECT fname,lname,location from employee where email=%s",(em))
+    	cursor.execute("SELECT employee.emp_id,employee.fname,employee.lname,employee.location,employee.email,emp_account.Salary,emp_account.Med_Plan,emp_account.Vac_hours_left from employee left join emp_account on employee.emp_id=emp_account.emp_is where employee.email=%s ",(em))
     	d=cursor.fetchall()
-    	f_name=d[0][0]
-    	l_name=d[0][1]
-    	location=d[0][2]
+    	f_name=d[0][1]
+    	l_name=d[0][2]
+    	location=d[0][3]
     	return render_template('User.html',f_name=f_name,l_name=l_name,location=location)
     
 
