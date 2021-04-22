@@ -37,7 +37,7 @@ def check():
     elif details[0][0]=='':
     	return 'Please check your User name or Password'
     else:
-    	cursor.execute("SELECT f_name,l_name,location from employee where email=%s",(em))
+    	cursor.execute("SELECT fname,lname,location from employee where email=%s",(em))
     	d=cursor.fetchall()
     	f_name=d[0][0]
     	l_name=d[0][1]
