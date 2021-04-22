@@ -37,7 +37,7 @@ def check():
     elif details[0][0]=='':
     	return 'Please check your User name or Password'
     else:
-    	cursor.execute("SELECT employee.emp_id,employee.fname,employee.lname,employee.location,employee.email,emp_account.Salary,emp_account.Med_Plan,emp_account.Vac_hours_left from employee left join emp_account on employee.emp_id=emp_account.emp_is where employee.email=%s ",(em))
+    	cursor.execute("SELECT employee.emp_id,employee.fname,employee.lname,employee.location,employee.email,emp_account.Salary,emp_account.Med_Plan,emp_account.Vac_hours_left from employee left join emp_account on employee.emp_id=emp_account.emp_id where employee.email=%s ",(em))
     	d=cursor.fetchall()
     	f_name=d[0][1]
     	l_name=d[0][2]
