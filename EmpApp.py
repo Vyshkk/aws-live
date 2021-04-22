@@ -30,12 +30,19 @@ def check():
     cursor=db_conn.cursor()
     em=request.form['email']
     pas=request.form['password']
-    d=cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
+    cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
     details = cursor.fetchall()
     if details[0][0]=='hr@gmail.com':
         return render_template('Hme_Pge.html')
+    else if details[0][0]=='':
+    	return 'Please check your User name or Password'
     else:
-    	return render_template('AddEmp.html')
+    	cusor.execute("SELECT f_name,l_name,location from employee where email=%s",(em_pas))
+    	d=cursor.fetchall()
+    	f_name=d[0][0]
+    	l_name=d[0][1]
+    	location=d[0][2]
+    	return render_template('User.html',f_name=f_name,l_name=l_name,location=location)
     
 
 
