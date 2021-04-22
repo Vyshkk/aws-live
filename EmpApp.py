@@ -53,6 +53,10 @@ def check():
 def get_emp_info():
     return render_template("GetEmp.html")
 
+@app.route("/Logout", methods=['GET', 'POST'])
+def Logout():
+    return render_template("SignIn.html")
+
 @app.route("/ins_emp_info", methods=['GET', 'POST'])
 def ins_emp_info():
     return render_template("AddEmp.html")
