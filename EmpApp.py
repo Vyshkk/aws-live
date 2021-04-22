@@ -34,7 +34,7 @@ def check():
     details = cursor.fetchall()
     if details[0]=='hr@gmail.com':
         return render_template('Hme_Pge.html')
-    else
+    else:
     	return render_template('AddEmp.html')
     
 
