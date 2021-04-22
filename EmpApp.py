@@ -34,18 +34,18 @@ def check():
     details = cursor.fetchall()
    # print("abc")
     
-    print ('<table border="0"><tr><th>order</th><th>name</th><th>type</th><th>description</th></tr>')
-    print ('<tbody>')
-    counter = 0
-    for field in details:
-        counter = counter + 1
-        name = field[0]
-        pas = field[1]
-        print('<tr><td>' + str(counter) + '</td><td>' + name + '</td><td>' + pas + '</td><td></td></tr>')
-    print ('</tbody>')
-    print ('</table>')
+    #print ('<table border="0"><tr><th>order</th><th>name</th><th>type</th><th>description</th></tr>')
+    #print ('<tbody>')
+    #counter = 0
+    #for field in details:
+    #    counter = counter + 1
+    #    name = field[0]
+    #    pas = field[1]
+    #    print('<tr><td>' + str(counter) + '</td><td>' + name + '</td><td>' + pas + '</td><td></td></tr>')
+    #print ('</tbody>')
+    #print ('</table>')
     
-    #return render_template('Hme_Pge.html')
+    return render_template('Hme_Pge.html')
 
 
 @app.route("/get_emp_info", methods=['GET', 'POST'])
@@ -118,8 +118,10 @@ def fetch():
     cursor = db_conn.cursor()
     cursor.execute(get_sql, (emp_id))
     details=cursor.fetchall()
-    for detail in details:
-        var = detail
+    print(details[0])
+    print(details[1])
+    #for detail in details:
+    #    var = detail
     return render_template('GetEmpOutput.html',emp_id=cursor.fetchall())
 
 
