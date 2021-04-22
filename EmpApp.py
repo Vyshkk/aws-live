@@ -32,7 +32,7 @@ def check():
     pas=request.form['password']
     d=cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
     details = cursor.fetchall()
-    if details[0]=='hr@gmail.com':
+    if details[0][0]=='hr@gmail.com':
         return render_template('Hme_Pge.html')
     else:
     	return render_template('AddEmp.html')
