@@ -34,7 +34,7 @@ def check():
     details = cursor.fetchall()
     if details[0][0]=='hr@gmail.com':
         return render_template('Hme_Pge.html')
-    else if details[0][0]=='':
+    elif details[0][0]=='':
     	return 'Please check your User name or Password'
     else:
     	cusor.execute("SELECT f_name,l_name,location from employee where email=%s",(em_pas))
