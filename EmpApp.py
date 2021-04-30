@@ -29,8 +29,8 @@ def home():
 def check():
     cursor=db_conn.cursor()
     em=request.form['email']
-    pas=request.form['password']
-    cursor.execute("SELECT *  FROM emp_login where email=%s and password=%s",(em,pas))
+    #pas=request.form['password']
+    cursor.execute("SELECT *  FROM emp_login where email=%s",(em))
     details = cursor.fetchall()
     if details[0][0]=='hr@gmail.com':
         return render_template('Hme_Pge.html')
